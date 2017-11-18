@@ -1,0 +1,24 @@
+.col {
+    width: 223px;
+    height: 70px;
+}
+
+.item {
+    padding: 20px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 2px;
+    background: #000;
+}
+.currentFigure {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    float: left;
+}
+.mainBord {
+  float:left;
+  width:300px;
+}
