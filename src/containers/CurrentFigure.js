@@ -3,7 +3,8 @@ import CurrentFigure from '../components/CurrentFigure'
 
 
 const mapStateToProps = (state) => ({
-  currentFigure: state.Board.currentFigure
+  currentFigure: state.Board.currentFigure,
+  win: state.Board.win
 })
 
 const CurrentFigureContainer = connect(mapStateToProps

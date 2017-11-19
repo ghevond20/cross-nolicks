@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Board from './Board'
 import CurrentFigure from './CurrentFigure'
+import Winner from './Winner'
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <Board  />
         <CurrentFigure  />
+        <Winner />
       </div>
     )
   }

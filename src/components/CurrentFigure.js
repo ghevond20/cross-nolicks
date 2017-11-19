@@ -4,9 +4,12 @@ class CurrentFigure extends Component {
 
 
   render() {
-    const { currentFigure }=this.props
+    const { currentFigure, win }=this.props
     if(!currentFigure){
       return (<Loading />)
+    }
+    if(win){
+      return(<div/>)
     }
     return (
         <div className="currentFigure">{currentFigure}</div>

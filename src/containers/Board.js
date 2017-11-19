@@ -3,7 +3,8 @@ import Board from '../components/Board'
 
 const mapStateToProps = (state) => ({
   currentFigure:state.Board.currentFigure,
-  board:state.Board.board
+  board:state.Board.board,
+  win:state.Board.win
 })
 
  const BoardContainer = connect(mapStateToProps

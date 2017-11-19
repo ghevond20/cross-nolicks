@@ -4,12 +4,20 @@
 }
 
 .item {
+    color:#fff;
     padding: 20px;
     width: 30px;
     height: 30px;
     float: left;
     margin: 2px;
     background: #000;
+}
+.item:hover{
+  background-color: rgba(55,55,55,0.6);
+  transition: 1s
+}
+.item.disable {
+  cursor:not-allowed;
 }
 .currentFigure {
     width: 20px;
