@@ -12,6 +12,17 @@ class Board extends Component {
 
   }
 
+  checkIsFull(board){
+    let result = true
+    board.forEach(col=>{
+      let tempArray = col.filter(item => item ==='').length
+      if(result && tempArray > 0){
+          result = false
+      }
+    })
+    return result
+  }
+
   onClickItem (colIndex,rowIndex) {
     const {board, currentFigure,dispatch} = this.props
     if(board[colIndex][rowIndex]!=''){
@@ -19,7 +30,8 @@ class Board extends Component {
     }
     board[colIndex][rowIndex]=currentFigure;
     let win = this.validate(board,colIndex,rowIndex)
-    dispatch(updateBoard(board,win))
+    let draw = this.checkIsFull(board)
+    dispatch(updateBoard(board,win,draw))
   }
 
   validate(board,colIndex,rowIndex){
@@ -108,12 +120,15 @@ class Board extends Component {
   }
 
   render() {
-    const { board, win,currentFigure }=this.props
+    const { board, win,currentFigure, draw }=this.props
     if(!board){
       return (<Loading />)
     }
     if(win){
       return (<div>{currentFigure}, Win!!!</div>)
+    }
+    if(draw){
+      return (<div> friendship, Win ;););)</div>)
     }
     return (
         <div className='mainBord'>{this.printBoard()}</div>

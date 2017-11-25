@@ -11,8 +11,8 @@ class Winner extends Component {
   }
 
   getAgainButton(){
-    const {win} = this.props
-    if(win){
+    const {win,draw} = this.props
+    if(win || draw){
       return (
         <button onClick={this.startGame}>AGAIN</button>
       )
@@ -20,14 +20,20 @@ class Winner extends Component {
   }
 
   render() {
-    const { winX, winO }=this.props
+    const { winX, winO, gameTotalCount }=this.props
     if(winX === undefined || winO === undefined){
       return (<Loading />)
     }
+    let drawCount = 0;
+    if(gameTotalCount>1){
+      drawCount = gameTotalCount-(winX+winO)
+    }
     return (
         <div className="winner">
+          <div className="winner_item">ToTal Count is {gameTotalCount} </div>
           <div className="winner_item">X - POINT {winX}</div>
           <div className="winner_item">O - POINT {winO}</div>
+          <div className="winner_item">Draw Count is {drawCount} </div>
           {this.getAgainButton()}
         </div>
     );
